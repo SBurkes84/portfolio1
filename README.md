@@ -1,51 +1,58 @@
-# Shequila Sledge – Developer Portfolio
+# Arkansas Film & Actor Website
 
-Welcome to my personal developer portfolio! This site showcases my background in computer science, web development, and data analysis, along with programming examples, documentation, and writing samples.
+This project is a simple website that highlights films and actors with ties to Arkansas.
+It was created as a Capstone 2 project to demonstrate planning, analysis/design, and implementation.
 
-## 🌐 Live Portfolio
-➡️ [https://SBurkes84.github.io/portfolio1]
+## Features
 
-## 📁 What’s Included
+- Home page explaining the purpose of the site
+- Films list page with a small curated sample of Arkansas-connected films
+- Film detail pages with synopsis, runtime, genre, production info, and sample cast list
+- Actors list page with a sample of Arkansas actors and actresses
+- Actor detail pages with biography, quick facts, and a short filmography
+- Cross-links between films and actors
+- Placeholder for Google Analytics tracking
+- Clean, simple styling using a single CSS file
 
-### 🔹 Profile
-- Photo, background summary, and a personal “About Me” section
+## Technology
 
-### 🔹 Resume
-- Downloadable resume in PDF format
+- HTML
+- CSS
+- (Optional) A small amount of JavaScript for future enhancements
+- GitHub Pages for hosting
+- Google Analytics (tracking code snippet provided as a placeholder)
 
-### 🔹 Skills & Education
-- Programming languages, tools, and educational background
+## How to Run
 
-### 🔹 Programming Examples
-- **JavaScript Calculator**
-- **Database Query Tool**
+1. Download the project files.
+2. Open `index.html` in your browser to view the home page.
+3. Click on **Films** or **Actors** in the navigation bar to explore the rest of the site.
 
-### 🔹 Word Project Documentation
-- `Project_Charter_UV_Tracker.docx`
-- `Project_Analysis_UV_Tracker.docx`
-- `Project_Design_UV_Tracker_with_Code.docx`
+## How to Deploy on GitHub Pages
 
-### 🔹 Writing
-- Linked technical documents from the UV Tracker project
+1. Create a new GitHub repository.
+2. Upload all of the project files to the repository (including `index.html` and `styles.css`).
+3. In the repository, go to **Settings → Pages**.
+4. Under **Source**, select `Deploy from a branch` and choose your `main` branch with the `/root` directory.
+5. Save. After a short delay, GitHub Pages will give you a public URL for your site.
 
-### 🔹 Web Projects
-- Portfolio site
-- Responsive landing page layout
-- React-based to-do list app
+## Google Analytics
 
-### 🔹 Contact
-- Email: sssledge@ualr.edu  
-- Phone: 501-722-5218  
-- GitHub: [github.com/SBurkes84](https://github.com/SBurkes84)  
-- LinkedIn: [linkedin.com/in/shequila-sledge](https://www.linkedin.com/in/shequila-sledge)
+A placeholder Google Analytics snippet is included in `index.html` inside an HTML comment.
+To enable tracking:
 
-## 🛠️ Technologies Used
+1. Create a GA4 property and get your Measurement ID (looks like `G-XXXXXXXXXX`).
+2. Replace `G-XXXXXXXXXX` in the snippet with your ID.
+3. Remove the HTML comment markers so the script runs.
 
-- HTML, CSS, JavaScript
-- GitHub Pages
-- React
-- VS Code
+## Data Sources
 
+This project is for demonstration and learning purposes only.
+Typical data sources for a more complete version of the site would include:
 
+- Encyclopedia of Arkansas
+- IMDb
 
+## Author
 
+Created by **Tiffany Burkes** as part of Capstone 2.

@@ -1,498 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Shequila Sledge - Portfolio</title>
-    <meta name="description" content="Portfolio of Shequila Sledge - Computer Science">
-    <meta name="keywords" content="Computer Science, IT, Data Analysis, Web Development">
-    <meta name="author" content="Shequila Sledge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    <meta charset="UTF-8">
+    <title>Arkansas Film & Actor Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #f8f8f8;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-        .tabcontent {
-            width: 80%;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.65);
-            border-radius: 8px;
-            color: #ffffff;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-            display: none;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        .topnav {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
-        }
-        .nav-wrapper {
-            display: inline-block;
-        }
-        .topnav a, .dropbtn {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-size: 16px;
-            background-color: #444;
-            border-radius: 6px;
-            border: 1px solid #666;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-block;
-        }
-        .topnav a:hover, .dropdown:hover .dropbtn {
-            background-color: #04AA6D;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            background-color: #444;
-            border-bottom: 1px solid #555;
-        }
-        .dropdown-content a:hover {
-            background-color: #04AA6D;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .profile-pic {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border: 4px solid #04AA6D;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        @media (max-width: 768px) {
-            .tabcontent {
-                width: 95%;
-                padding: 10px;
-            }
-            .topnav a {
-                font-size: 14px;
-                padding: 10px;
-            }
-        }
-    </style>
- </head>
+    <!-- Google Analytics placeholder -->
+    <!-- Replace G-XXXXXXXXXX with your actual GA4 Measurement ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+</head>
 <body>
-    <h1>Portfolio of Shequila Sledge</h1>
-    <div class="topnav" id="myTopnav">
-        <div class="nav-wrapper">
-            <a class="tablinks" onclick="openTab('Home')">Profile</a>
-            <a class="tablinks" onclick="openTab('Resume')">Resume</a>
-            <a class="tablinks" onclick="openTab('CoverLetter')">Cover Letter</a>
-            <a class="tablinks" onclick="openTab('Skills')">Skills</a>
-            <a class="tablinks" onclick="openTab('Education')">Education</a>
-            <a class="tablinks" onclick="openTab('Accomplishments')">Accomplishments</a>
-            <a class="tablinks" onclick="openTab('Contact')">Contact</a>
-            <div class="dropdown">
-                <button class="dropbtn">Work Examples<i class="fa fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a class="tablinks" onclick="openTab('Writing')">Writing</a>
-                    <a class="tablinks" onclick="openTab('WebProjects')">Web Projects</a>
-                    <a class="tablinks" onclick="openTab('Database')">Database</a>
-                    <a class="tablinks" onclick="openTab('Programming')">Programming</a>
-                    <a class="tablinks" onclick="openTab('SoftSkills')">Soft Skills</a>
-                    <a class="tablinks" onclick="openTab('Capstone')">Capstone</a>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <span class="logo-mark">AR</span>
+            <span class="logo-text">Arkansas Film & Actor Website</span>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="films.html">Films</a>
+            <a href="actors.html">Actors</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Celebrating Films & Talent with Arkansas Roots</h1>
+                <p>
+                    This site highlights a sample of movies and performers that have a connection to Arkansas.
+                    It is a Capstone 2 project that shows how this information can be organized in a clean,
+                    easy-to-use website.
+                </p>
+                <div class="hero-actions">
+                    <a href="films.html" class="btn primary">Browse Films</a>
+                    <a href="actors.html" class="btn outline">Browse Actors</a>
                 </div>
             </div>
+            <div class="hero-card">
+                <p class="hero-tag">Sample Project</p>
+                <h2>What you can explore</h2>
+                <ul>
+                    <li>Films shot in Arkansas or about Arkansas</li>
+                    <li>Actors and actresses with ties to the state</li>
+                    <li>Cross-links between films and cast members</li>
+                    <li>Clean layout and simple navigation</li>
+                </ul>
+            </div>
         </div>
+    </section>
+
+    <section class="section">
+        <div class="container grid-two">
+            <article class="card">
+                <h2>Arkansas Films</h2>
+                <p>
+                    View a small curated list of films that have some type of Arkansas connection.
+                    Each film page shows a synopsis, runtime, genre, production company, and a cast list.
+                </p>
+                <a href="films.html" class="btn text-link">View films →</a>
+            </article>
+
+            <article class="card">
+                <h2>Arkansas Actors</h2>
+                <p>
+                    Explore actors and actresses who were born in Arkansas, grew up here,
+                    or have chosen Arkansas as home. Each profile includes a short biography
+                    and a sample filmography.
+                </p>
+                <a href="actors.html" class="btn text-link">View actors →</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="section section-muted">
+        <div class="container">
+            <h2>About This Project</h2>
+            <p>
+                This website is a student capstone project. It is not meant to be a complete or official database.
+                The goal is to demonstrate planning, design, and implementation of a small information system
+                using HTML, CSS, JavaScript, and Google Analytics.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>Arkansas Film & Actor Website &middot; Capstone 2 Project</p>
+        <p>Built by Tiffany Burkes</p>
     </div>
-
-
-    <!-- TAB CONTENT -->
-    <section id="Home" class="tabcontent">
-        <h2>Profile</h2>
-        <img src="IMG_0337.jpg" alt="Shequila Sledge" class="profile-pic">
-        <p style="text-align:center; font-weight:bold; font-size:18px; margin-bottom: 0;">Shequila Sledge</p>
-        <p style="text-align:center; margin-top: 5px; font-style: italic;">Aspiring Software Developer | Data Analyst | Team Leader</p>
-        <p style="margin-top: 30px;">I’m Shequila, a computer science student with a strong foundation in data analysis and IT systems. I enjoy working with complex datasets and optimizing IT workflows.  With over a decade of experience in customer service and team supervision, I’ve developed a reputation for being organized,
-        solution-focused, and adaptable in fast-paced environments. My professional journey has taken me from hospitality and
-        retail to operations management, where I’ve led teams, resolved critical issues, and driven continuous improvement.I am passionate about coding, solving real-world problems, and continuously learning new technologies. My strengths lie in backend logic, frontend creativity, and developing user-friendly applications. My goal is to contribute to innovative tech teams and make a positive impact through technology.  Currently, I’m pursuing a Bachelor of Science in Computer Science at the University of Arkansas at Little Rock,
-        building on my foundation in Computer Information Systems. I’m passionate about leveraging technology to streamline
-        processes and improve user experiences. This portfolio showcases the blend of my leadership experience and growing
-        technical expertise. Thanks for stopping by!</p>
-    </section>
- 
-  <section id="Resume" class="tabcontent">
-        <h2>Resume</h2>
-    <p><a href="Updated_Resume.docx" download>Download Word Version</a></p>
-    <p><a href="Updated_Resume.pdf" download>Download PDF Version</a></p>
-    </ul>
-  </section>
-  
-    <section id="CoverLetter" class="tabcontent">
-        <h2>Cover Letter</h2>
-        
-        <p>Dear Hiring Manager,</p>
-
-    <p>
-      I am writing to express my interest in joining your organization in a professional capacity that values strong leadership,
-      problem-solving, and a commitment to continuous improvement With over 10 years of experience in supervisory roles and a current pursuit of a Bachelor of Science in Computer Science, I bring a unique combination of operational knowledge and growing technical expertise.
-      In my previous roles, I’ve demonstrated a consistent ability to lead high-performing teams, resolve customer concerns promptly, and implement efficient workflows. As I transition into the tech field, I am excited to bring this same drive and attention to detail to a position that allows me to apply both my leadership skills and technical training.
-      I am enthusiastic about the opportunity to contribute to a forward-thinking company where I can continue to learn, grow, and make meaningful contributions. I welcome the chance to further discuss how my experience aligns with your goals.
-
-      Thank you for considering my application.
-    </p>
-
-    <p>Sincerely,<br>Shequila Sledge</p>
-    </section>
-  
-    <section id="Skills" class="tabcontent">
-        <h2>Skills</h2>
-          <ul>
-            <li>Programming: Python, Java, JavaScript</li>
-            <li>Web Development: HTML, CSS, React</li>
-            <li>Database Management: SQL, MongoDB</li>
-            <li>Data Analysis: Pandas, NumPy, Matplotlib</li>
-            <li>IT Systems: Windows, Linux, Networking</li>
-          </ul>
-       </section>
-        
-     <section id="Education" class="tabcontent">
-        <h2>Education</h2>
-    <ul>
-        <li><strong>Bachelor of Science in Computer Science</strong> – University of Arkansas at Little Rock (Expected 2026)</li>
-        <li><strong>Associate of Science in Computer Science</strong> – Southeast Arkansas College (2023)</li>
-    </ul>
-   </section>
-      
-    
-    <section id="Accomplishments" class="tabcontent">
-        <h2>Accomplishments</h2>
-<ul>
-    <li><strong>Dean's List</strong> – Southeast Arkansas College (2021–2023)</li>
-    <li><strong>1st Place – Science Fair</strong> (2021)</li>
-    <li><strong>Tech & Development:</strong> Built and published a portfolio website using GitHub Pages (2025)</li>
-    <li><strong>Data Science:</strong> Data science project analyzing eyesight changes with age (2025)</li>
-</ul>
-    </section>
-
-     
-    <section id="Contact" class="tabcontent">
-        <h2>Contact</h2>
-  <p>Email: sssledge@ualr.edu</p>
-  <p>Phone: 501-722-5218</p>
-  <p>GitHub: <a href="https://github.com/SBurkes84" target="_blank">github.com/SBurkes84</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/shequila-sledge" target="_blank">linkedin.com/in/shequila-sledge</a></p>
-</section>
-    
-   <section id="Writing" class="tabcontent"><h2>Writing Examples</h2>
-  <h3>Example 1: Environmental Geology Report</h3>
-  <p>This report analyzes saltwater intrusion in the Floridan Aquifer and includes key hydrologic data and recommendations. It illustrates my ability to conduct scientific research and present findings in a clear, academic tone.</p>
-  <a href="writing-1/environmental-geology-report.pdf" target="_blank">📄 View PDF</a>
-
-  <h3>Example 2: System Analysis Weekly Report</h3>
-  <p>This weekly status report demonstrates my technical writing and progress-tracking skills for the AB Staffing System redesign project. It is structured for stakeholder communication and risk tracking.</p>
-  <a href="writing-2/system-analysis-status-report.pdf" target="_blank">📄 View PDF</a>
-</section>
-
-   <section id="WebProjects" class="tabcontent" style="background: url('assets/images/webpage-background.jpg') repeat-x center/cover; width: 90%; margin: auto; padding: 20px;">
-  <h2>Web Projects</h2>
-
-  <div class="project">
-    <h3>SpaceX Dragon Project</h3>
-    <p>This project showcases a complete webpage about SpaceX's Dragon spacecraft. It includes semantic HTML structure, styled navigation, and responsive layout. The page is built using external CSS and features multiple content sections like crew, cargo, and lab configuration, as well as a dynamic hero section and aside widgets.</p>
-    <a href="https://SBurkes84.github.io/spacex-dragon-site/" target="_blank">🔗 View Live SpaceX Dragon Project</a>
-  </div>
-
-  <div class="project">
-    <h3>HTML/CSS Assessment Project</h3>
-    <img src="assets/images/webpage-header.jpg" alt="Webpage Header" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-bottom: 10px;">
-
-    <nav style="background-color: #000; padding: 10px; margin-bottom: 15px;">
-      <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap;">
-        <li><a href="https://ualr.edu/" title="Visit UALR" style="color: white; text-decoration: none;">UALR</a></li>
-        <li><a href="https://blackboard.ualr.edu/ultra/" title="UALR Blackboard" style="color: white; text-decoration: none;">Course Homepage</a></li>
-        <li><a href="https://validator.w3.org/" title="W3C Validator" style="color: white; text-decoration: none;">W3C</a></li>
-        <li><a href="https://www.littlerock.gov/" title="City of Little Rock" style="color: white; text-decoration: none;">Little Rock</a></li>
-        <li><a href="https://css-tricks.com/" title="CSS-Tricks Reference" style="color: white; text-decoration: none;">Favorite Site</a></li>
-      </ul>
-    </nav>
-
-    <h4 style="color: navy;">My Assessment</h4>
-    <p>The most important goal of effective communication is clarity. Clarity is not the same as simplicity. Often, simple things are clear if the message is intended to be brief and small, but often the message is about a complex relationship that can only be presented with a necessarily large amount of data.</p>
-    <p>Clarity refers to the focus on one particular message or goal at a time, rather than attempting to accomplish too much at once. Simplicity is often responsible for the "dumbing" of information rather than the illumination of it.</p>
-
-    <img src="assets/images/webpage-image.jpg" alt="Web Image" style="float: right; border: 2px solid #000; margin: 10px; max-width: 200px;">
-
-    <h4 style="color: navy;">Questions</h4>
-    <ul>
-      <li>
-        <strong>Explain the difference between the "alt" attribute and the "title" attribute.</strong><br>
-        The <code>alt</code> attribute provides alternative text for an image if it cannot be displayed and is used by screen readers. The <code>title</code> attribute shows a tooltip on hover and is not primarily used for accessibility.
-      </li>
-
-      <li>
-        <strong>Example of semantic markup for a definition:</strong><br>
-        <code>&lt;dfn&gt;Algorithm&lt;/dfn&gt; – a set of rules or processes for solving a problem in a finite number of steps.</code>
-      </li>
-
-      <li>
-        <strong>Example of a favorite link:</strong><br>
-        <code>&lt;a href="https://www.w3schools.com" target="_blank"&gt;Visit W3Schools for coding tutorials&lt;/a&gt;</code>
-      </li>
-    </ul>
-  </div>
-
-  <footer style="margin-top: 40px; color: white; text-align: center; background: linear-gradient(#444, #000); padding: 10px;">
-    &copy; 2024 Shequila Sledge – <a href="#WebProjects" style="color: #99ccff;">Back to Top</a>
-  </footer>
-</section>
-
-<section id="Database" class="tabcontent">
-  <h2>Database Design Examples</h2>
-
-  <h3>Example 1: Entity Relationship Diagram (ERD)</h3>
-  <p>
-    This example showcases an ERD I created for a university course scheduling system. It includes relationships between entities such as students, courses, instructors, and enrollments.
-    It demonstrates my ability to translate real-world requirements into a relational database design.
-  </p>
-  <a href="database-1/university-erd.png" target="_blank">View ERD Screenshot</a><br>
-  <a href="database-1/university-schema.txt" target="_blank">View SQL Design (Text Format)</a>
-
-  <h3>Example 2: SQL Table Creation and Query Assignment</h3>
-  <p>
-    This example includes SQL scripts and a screenshot of a query for a customer-order inventory system. It illustrates my skills in designing relational tables and writing JOIN queries.
-  </p>
-  <a href="database-2/order-db-screenshot.png" target="_blank">View Query Screenshot</a><br>
-  <a href="database-2/order-db.txt" target="_blank"> View SQL Code (Text Format)</a>
-</section>
-
-<section id="Programming" class="tabcontent">
-  <h2>Programming Projects</h2>
-
-  <div class="project">
-    <h3>JavaScript Calculator</h3>
-    <p>This is a responsive web-based calculator built with HTML, CSS, and JavaScript. It performs basic arithmetic operations with input validation and error handling.</p>
-    <a href="https://SBurkes84.github.io/calculator/" target="_blank">🔗 View Calculator Project</a>
-  </div>
-
-  <div class="project">
-    <h3>Currency Value History Tracker</h3>
-    <p>This app uses the ExchangeRate API and Chart.js to visualize currency value trends over time. It allows users to compare two currencies across a date range.</p>
-    <a href="https://SBurkes84.github.io/currency-history/" target="_blank">🔗 View Currency History Project</a>
-  </div>
-
-  <div class="currency-converter">
-    <h3>Currency Tracker App</h3>
-
-    <label for="baseCurrency">Base Currency:</label>
-    <select id="baseCurrency">
-      <option disabled selected>Select base currency</option>
-    </select>
-
-    <label for="convertToCurrency">Convert to Currency:</label>
-    <select id="convertToCurrency">
-      <option disabled selected>Select target currency</option>
-    </select>
-
-    <label for="fromDate">From Date:</label>
-    <input type="date" id="fromDate" />
-
-    <label for="toDate">To Date:</label>
-    <input type="date" id="toDate" />
-
-    <button id="showResults">Show Results</button>
-    <button id="clear">Clear</button>
-
-    <div id="chart-container">
-      <canvas id="currencyChart"></canvas>
-    </div>
-  </div>
-</section>
-
-<!-- Chart.js and Currency Script -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const baseUrl = "https://api.exchangerate.host";
-  let chart = null;
-
-  function populateCurrencies() {
-    fetch(`${baseUrl}/symbols`)
-      .then(response => response.json())
-      .then(data => {
-        const baseSelect = document.getElementById("baseCurrency");
-        const targetSelect = document.getElementById("convertToCurrency");
-
-        for (let code in data.symbols) {
-          const option1 = new Option(`${code} - ${data.symbols[code].description}`, code);
-          const option2 = new Option(`${code} - ${data.symbols[code].description}`, code);
-          baseSelect.appendChild(option1);
-          targetSelect.appendChild(option2);
-        }
-      });
-  }
-
-  function showResults() {
-    const base = document.getElementById("baseCurrency").value;
-    const target = document.getElementById("convertToCurrency").value;
-    const fromDate = document.getElementById("fromDate").value;
-    const toDate = document.getElementById("toDate").value;
-
-    if (!base || !target || !fromDate || !toDate) {
-      alert("Please complete all fields.");
-      return;
-    }
-
-    const url = `${baseUrl}/timeseries?start_date=${fromDate}&end_date=${toDate}&base=${base}&symbols=${target}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const labels = Object.keys(data.rates).sort();
-        const values = labels.map(date => data.rates[date][target]);
-
-        if (chart) chart.destroy();
-
-        const ctx = document.getElementById("currencyChart").getContext("2d");
-        chart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: labels,
-            datasets: [{
-              label: `${base} to ${target}`,
-              data: values,
-              borderWidth: 2,
-              borderColor: "#007BFF",
-              backgroundColor: "rgba(0, 123, 255, 0.1)",
-              tension: 0.3,
-              fill: true
-            }]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { position: 'top' },
-              title: {
-                display: true,
-                text: `Exchange Rate: ${base} to ${target}`
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: false
-              }
-            }
-          }
-        });
-      });
-  }
-
-  function clearForm() {
-    document.getElementById("baseCurrency").selectedIndex = 0;
-    document.getElementById("convertToCurrency").selectedIndex = 0;
-    document.getElementById("fromDate").value = "";
-    document.getElementById("toDate").value = "";
-
-    if (chart) {
-      chart.destroy();
-      chart = null;
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-  populateCurrencies();
-  document.getElementById("showResults").addEventListener("click", showResults);
-  document.getElementById("clear").addEventListener("click", clearForm);
-});
-</script>
-
-<section id="SoftSkills" class="tabcontent">
-  <h2>Soft Skills</h2>
-
-  <div class="skill-example">
-    <h3>Example 1: Problem Solving</h3>
-    <p><strong>Title:</strong> Resolving Customer Disputes at Saracen Casino</p>
-    <p><strong>Overview:</strong> A guest was upset about a machine error. I remained calm, actively listened, followed protocol, and collaborated with a technician to resolve the issue within 15 minutes.</p>
-    <p><strong>Skills Demonstrated:</strong> Conflict resolution, active listening, professional communication, composure under pressure, and customer service.</p>
-  </div>
-
-  <div class="skill-example">
-    <h3>Example 2: Project Management</h3>
-    <p><strong>Title:</strong> Coordinating Team Responsibilities During a Holiday Rush</p>
-    <p><strong>Overview:</strong> During a busy holiday season, I created rotating schedules, cross-trained staff, and maintained strong communication with leadership to ensure smooth operations.</p>
-    <p><strong>Skills Demonstrated:</strong> Time management, team coordination, leadership under pressure, and process optimization.</p>
-  </div>
-</section>
-
-<section id="Capstone" class="tabcontent">
-  <h2>Capstone Project</h2>
-  <p><strong>Project:</strong> UV Exposure & Weather Tracker</p>
-  <p>This project involved designing and analyzing a system to track UV levels and weather data for use by dermatology clinics and patients. It integrates external APIs, system design, and data presentation elements.</p>
-
-  <ul>
-    <li><a href="Project_Charter_Shequila_Sledge.docx" target="_blank">📄 Project Charter</a></li>
-    <li><a href="Project_Analysis_UV_Tracker.docx" target="_blank">📄 System Analysis</a></li>
-    <li><a href="Project_Design_UV_Tracker_with_Code.docx" target="_blank">📄 System Design & Code</a></li>
-  </ul>
-</section>
-
-<script>
-  function openTab(tabName) {
-    // Hide all tab contents
-    document.querySelectorAll(".tabcontent").forEach(tab => {
-      tab.style.display = "none";
-    });
-
-    // Remove active class from all tab buttons
-    document.querySelectorAll(".tablinks").forEach(link => {
-      link.classList.remove("active");
-    });
-
-    // Show selected tab content
-    const selectedTab = document.getElementById(tabName);
-    if (selectedTab) {
-      selectedTab.style.display = "block";
-    }
-
-    // Highlight the clicked tab button
-    const activeLink = Array.from(document.querySelectorAll(".tablinks"))
-      .find(link => link.textContent.trim() === tabName || link.getAttribute("onclick")?.includes(tabName));
-    if (activeLink) {
-      activeLink.classList.add("active");
-    }
-  }
-
-  // Open default tab on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    openTab("Home");
-  });
-</script>
-
+</footer>
 </body>
 </html>
