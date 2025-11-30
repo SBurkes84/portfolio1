@@ -55,4 +55,4 @@ Typical data sources for a more complete version of the site would include:
 
 ## Author
 
-Created by **Tiffany Burkes** as part of Capstone 2.
+Created by **Shequila Sledge** as part of Capstone 2.
