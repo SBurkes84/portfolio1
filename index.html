@@ -8,134 +8,716 @@
     <meta name="keywords" content="Computer Science, IT, Data Analysis, Web Development">
     <meta name="author" content="Shequila Sledge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #f8f8f8;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            /* Soft pink / orange gradient */
+            background: linear-gradient(135deg, #ffe3ed 0%, #ffe4c4 45%, #ffd1f3 100%);
+            background-attachment: fixed;
+            color: #222;
         }
-        .container {
-            width: 80%;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.65); /* dark semi-transparent background */
-            border-radius: 8px;
-            color: #ffffff;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-        h1, h2 {
-            text-align: center;
-        }
+
+        /* Top Navigation */
         .topnav {
-            overflow: hidden;
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 10px 10px;
+            backdrop-filter: blur(6px);
         }
-        .topnav a, .dropdown .dropbtn {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            background: none;
+
+        .brand {
+            font-weight: 700;
+            margin-right: 18px;
+            font-size: 20px;
+            letter-spacing: 0.03em;
+            color: #c05621;
+        }
+
+        .topnav a,
+        .dropdown .dropbtn {
             border: none;
+            background: none;
+            color: #333;
+            padding: 10px 14px;
+            text-decoration: none;
+            font-size: 15px;
             cursor: pointer;
+            border-radius: 999px;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-        .topnav a:hover, .dropdown:hover .dropbtn {
-            background-color: #555;
+
+        .topnav a:hover,
+        .dropdown .dropbtn:hover {
+            background-color: rgba(192, 86, 33, 0.08);
+            color: #c05621;
+            transform: translateY(-1px);
         }
+
+        .topnav a.active {
+            background-color: #c05621;
+            color: #fff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
+            margin-top: 6px;
+            right: 0;
+            background-color: #ffffff;
+            min-width: 190px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 1100;
         }
+
         .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
+            color: #333;
+            padding: 10px 14px;
             text-decoration: none;
             display: block;
             text-align: left;
+            font-size: 14px;
+            border-radius: 0;
         }
+
+        .dropdown-content a:hover {
+            background-color: #fff5eb;
+            color: #c05621;
+        }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        /* Main layout */
+        .page-wrap {
+            max-width: 1100px;
+            margin: 30px auto 40px auto;
+            padding: 0 16px 40px 16px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);
+            backdrop-filter: blur(4px);
+        }
+
+        .tabcontent {
+            display: none;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        .highlight {
+            color: #c05621;
+            font-weight: 600;
+        }
+
+        /* Profile / header layout */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background-color: #fff5eb;
+            color: #c05621;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .pill i {
+            font-size: 13px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background-color: #edf2f7;
+            color: #4a5568;
+        }
+
+        .info-card {
+            background-color: #fefaf6;
+            border-radius: 14px;
+            padding: 14px 16px;
+            border: 1px solid #ffe1c3;
+        }
+
+        .info-card p {
+            margin-bottom: 4px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #a0aec0;
+            margin-bottom: 4px;
+        }
+
+        /* Lists & grids */
+        ul {
+            margin-left: 18px;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding: 14px 16px;
+            border: 1px solid #edf2f7;
+        }
+
+        .card h3 {
+            margin-bottom: 6px;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 4px;
+        }
+
+        a.link {
+            color: #c05621;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a.link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        .contact-item i {
+            font-size: 18px;
+            color: #c05621;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            margin-right: 6px;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+            color: #4a5568;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            border-color: #c05621;
+            color: #c05621;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #4a5568;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form button {
+            border: none;
+            background-color: #c05621;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .contact-form button:hover {
+            background-color: #9c4221;
+        }
+
+        /* Fade-in animation */
         .fade-in {
             opacity: 0;
-            transform: translateY(10px);
-            animation: fadeIn 1s ease-in-out forwards;
+            transform: translateY(8px);
+            animation: fadeIn 0.5s ease-out forwards;
         }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 10px;
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .topnav {
+                flex-wrap: wrap;
             }
-            .topnav a, .dropdown .dropbtn {
-                font-size: 16px;
-                padding: 10px;
+            .brand {
+                flex-basis: 100%;
+                text-align: center;
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-layout,
+            .two-col,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-wrap {
+                margin-top: 16px;
+            }
+            .container {
+                padding: 18px;
+            }
+            .topnav a,
+            .dropdown .dropbtn {
+                font-size: 14px;
+                padding: 8px 10px;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
     <div class="topnav">
-        <a onclick="openTab(event, 'Home')" class="tablinks active">Profile</a>
-        <a onclick="openTab(event, 'Resume')" class="tablinks">Resume</a>
-        <a onclick="openTab(event, 'Skills')" class="tablinks">Skills</a>
-        <a onclick="openTab(event, 'Education')" class="tablinks">Education</a>
-        <a onclick="openTab(event, 'Accomplishments')" class="tablinks">Accomplishments</a>
-        <a onclick="openTab(event, 'Contact')" class="tablinks">Contact</a>
+        <div class="brand">Shequila Sledge</div>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Home')" class="tablinks active">Profile</a>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Resume')" class="tablinks">Resume</a>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Skills')" class="tablinks">Skills</a>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Education')" class="tablinks">Education</a>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Accomplishments')" class="tablinks">Accomplishments</a>
+        <a href="javascript:void(0)" onclick="openTab(event, 'Contact')" class="tablinks">Contact</a>
+
         <div class="dropdown">
-            <button class="dropbtn">Work Examples <i class="fa fa-caret-down"></i></button>
+            <button class="dropbtn">
+                Work Examples <i class="fa fa-caret-down"></i>
+            </button>
             <div class="dropdown-content">
-                <a onclick="openTab(event, 'Writing')" class="tablinks">Writing</a>
-                <a onclick="openTab(event, 'WebProject')" class="tablinks">Web Projects</a>
-                <a onclick="openTab(event, 'Database')" class="tablinks">Databases</a>
+                <a href="javascript:void(0)" onclick="openTab(event, 'Writing')" class="tablinks">Writing</a>
+                <a href="javascript:void(0)" onclick="openTab(event, 'WebProject')" class="tablinks">Web Projects</a>
+                <a href="javascript:void(0)" onclick="openTab(event, 'Database')" class="tablinks">Databases</a>
             </div>
         </div>
     </div>
 
-    <div id="Home" class="container fade-in">
-        <h1>Profile</h1>
-        <p>This is a preview of your updated portfolio page with lighter text and dark semi-transparent containers for better readability. The dark mode toggle has been removed.</p>
-    </div>
+    <!-- Page Content -->
+    <div class="page-wrap">
 
-    <div id="Resume" class="container fade-in" style="display:none;">
-        <h1>Resume</h1>
-        <p>Download my resume in your preferred format:</p>
-        <p>
-            <a href="Shequila_Sledge_Resume.pdf" target="_blank">📄 PDF Version</a> |
-            <a href="Shequila_Sledge_Resume.docx" target="_blank">📝 Word Version</a>
-        </p>
+        <!-- Profile -->
+        <div id="Home" class="container tabcontent fade-in">
+            <div class="profile-layout">
+                <div>
+                    <div class="pill">
+                        <i class="fa fa-laptop"></i>
+                        Computer Science Portfolio
+                    </div>
+                    <h1>Hello, I'm <span class="highlight">Shequila Sledge</span></h1>
+                    <p>
+                        I’m a motivated Computer Science student with a strong interest in
+                        <span class="highlight">web development, data analysis, and IT systems</span>.
+                        I enjoy turning real-world problems into practical, user-friendly solutions and creating
+                        projects that blend technical skill with clear communication.
+                    </p>
+                    <p>
+                        This portfolio highlights my academic work, technical projects, and professional experience
+                        in areas such as compliance, technology, and problem solving.
+                    </p>
+
+                    <div class="tag-row">
+                        <span class="tag">HTML / CSS / JavaScript</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Team Collaboration</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-label">Quick Snapshot</div>
+                    <p><strong>Location:</strong> Little Rock, AR</p>
+                    <p><strong>Focus Areas:</strong> Web Development, Data, IT Systems</p>
+                    <p><strong>Strengths:</strong> Detail-oriented, organized, dependable</p>
+                    <p><strong>Goal:</strong> Grow into a role that combines technology with real-world impact.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume -->
+        <div id="Resume" class="container tabcontent">
+            <h1>Resume</h1>
+            <p>You can view or download my resume using the links below:</p>
+            <ul>
+                <li>
+                    <a class="link" href="Shequila_Sledge_Resume.pdf" target="_blank">
+                        <i class="fa fa-file-pdf-o"></i> PDF Version
+                    </a>
+                </li>
+                <li>
+                    <a class="link" href="Shequila_Sledge_Resume.docx" target="_blank">
+                        <i class="fa fa-file-word-o"></i> Word Version
+                    </a>
+                </li>
+            </ul>
+
+            <div class="two-col" style="margin-top: 18px;">
+                <div class="card">
+                    <h3>Experience Highlights</h3>
+                    <ul>
+                        <li>Applied critical thinking and problem-solving in fast-paced environments.</li>
+                        <li>Interpreted policies, procedures, and technical information with attention to detail.</li>
+                        <li>Collaborated with colleagues and stakeholders to resolve issues efficiently.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Technical documentation and clear written communication.</li>
+                        <li>Time management and working independently with minimal supervision.</li>
+                        <li>Ethics, compliance awareness, and professional conduct.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="Skills" class="container tabcontent">
+            <h1>Skills</h1>
+            <div class="two-col">
+                <div class="card">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>HTML, CSS, basic JavaScript</li>
+                        <li>Version control with Git & GitHub</li>
+                        <li>Basic SQL and database concepts</li>
+                        <li>Microsoft Office & productivity tools</li>
+                        <li>Research and information gathering</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Detail-oriented documentation and record-keeping</li>
+                        <li>Communication with diverse groups of people</li>
+                        <li>Problem solving and decision-making</li>
+                        <li>Time management and prioritization</li>
+                        <li>Teamwork and collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div id="Education" class="container tabcontent">
+            <h1>Education</h1>
+            <div class="card">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p class="meta">University of Arkansas at Little Rock (UALR)</p>
+                <p>
+                    Coursework includes programming, web development, databases, data structures,
+                    and introductory health informatics and IT.
+                </p>
+            </div>
+
+            <div class="card" style="margin-top: 14px;">
+                <h3>Related Academic Work</h3>
+                <ul>
+                    <li>Capstone project work involving software design, analysis, and documentation.</li>
+                    <li>Health informatics projects focused on patient portals and clinical workflows.</li>
+                    <li>Assignments involving data interpretation, reporting, and problem solving.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Accomplishments -->
+        <div id="Accomplishments" class="container tabcontent">
+            <h1>Accomplishments</h1>
+            <ul>
+                <li>Completed multiple web and data-focused course projects with detailed documentation.</li>
+                <li>Balanced academic responsibilities with professional and personal commitments.</li>
+                <li>Demonstrated consistent follow-through on long-term projects and deadlines.</li>
+                <li>Developed a portfolio to showcase technical growth and professional development.</li>
+            </ul>
+        </div>
+
+        <!-- Writing -->
+        <div id="Writing" class="container tabcontent">
+            <h1>Writing Samples</h1>
+            <p>
+                This section highlights selected writing work, including reports, reflections, and project documents
+                that demonstrate clear communication and organization.
+            </p>
+
+            <div class="card">
+                <h3>Project Documentation & Reports</h3>
+                <ul>
+                    <li>Project charters and analysis documents for course projects.</li>
+                    <li>Health informatics final project report describing patient portal challenges and solutions.</li>
+                    <li>Written reflections and summaries connecting technical tools to real-world use.</li>
+                </ul>
+                <!-- Replace # with actual GitHub or file links when ready -->
+                <p style="margin-top: 8px;">
+                    Links can be added here to specific writing samples hosted on GitHub or cloud storage.
+                </p>
+            </div>
+        </div>
+
+        <!-- Web Projects -->
+        <div id="WebProject" class="container tabcontent">
+            <h1>Web Projects</h1>
+            <p>
+                Below are examples of web-based work that show my growth with HTML, CSS, and basic JavaScript.
+            </p>
+
+            <div class="two-col">
+                <div class="card">
+                    <h3>Personal Portfolio Site</h3>
+                    <p class="meta">HTML, CSS, JavaScript</p>
+                    <p>
+                        A responsive single-page portfolio with tabbed navigation, gradient design, and organized sections
+                        for experience, skills, and projects.
+                    </p>
+                    <p>
+                        <!-- Replace # with your repository / live link -->
+                        <a class="link" href="#" target="_blank">
+                            <i class="fa fa-github"></i> View on GitHub
+                        </a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Course / Class Projects</h3>
+                    <p class="meta">Practice builds & assignments</p>
+                    <p>
+                        Additional small web projects such as simple calculators, layout practice, and UI mockups
+                        completed as part of coursework and self-study.
+                    </p>
+                    <p>
+                        <a class="link" href="#" target="_blank">
+                            Add links here as you upload projects.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Projects -->
+        <div id="Database" class="container tabcontent">
+            <h1>Database & Data Projects</h1>
+            <p>
+                This section is for any work involving databases, queries, or data analysis.
+            </p>
+
+            <div class="card">
+                <h3>Introductory SQL & Data Exercises</h3>
+                <p class="meta">SQL • Data Retrieval • Basic Analysis</p>
+                <p>
+                    Practice assignments working with sample datasets, learning how to query and organize information,
+                    and interpreting results to answer real-world style questions.
+                </p>
+            </div>
+
+            <div class="card" style="margin-top: 14px;">
+                <h3>Future Data Projects</h3>
+                <p>
+                    As I complete more coursework and projects, this section will expand with:
+                </p>
+                <ul>
+                    <li>Sample database schemas and ER diagrams.</li>
+                    <li>Data reports or dashboards created for class projects.</li>
+                    <li>Any personal data projects or visualizations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="Contact" class="container tabcontent">
+            <h1>Contact</h1>
+            <div class="contact-grid">
+                <div>
+                    <p>
+                        I’m open to opportunities, feedback, and conversations about technology, projects,
+                        and professional growth. Feel free to reach out using the options below.
+                    </p>
+
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <span>youremail@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker"></i>
+                        <span>Little Rock, AR</span>
+                    </div>
+
+                    <div class="contact-links" style="margin-top: 10px;">
+                        <!-- Replace # with your real profiles -->
+                        <a href="#" target="_blank">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Static form (no backend) just for appearance -->
+                    <form class="contact-form">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" placeholder="Your name">
+
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="Your email">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Type a short message..."></textarea>
+
+                        <button type="button">Send (demo only)</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
         function openTab(evt, tabName) {
-            document.querySelectorAll(".container").forEach(tab => tab.style.display = "none");
-            document.getElementById(tabName).style.display = "block";
+            // Hide all tab contents
+            var tabcontents = document.querySelectorAll(".tabcontent");
+            tabcontents.forEach(function (tab) {
+                tab.style.display = "none";
+            });
+
+            // Remove active state from all tab links
+            var tablinks = document.querySelectorAll(".tablinks");
+            tablinks.forEach(function (link) {
+                link.classList.remove("active");
+            });
+
+            // Show selected tab
+            var tab = document.getElementById(tabName);
+            if (tab) {
+                tab.style.display = "block";
+
+                // Re-trigger fade-in animation
+                tab.classList.remove("fade-in");
+                void tab.offsetWidth; // force reflow
+                tab.classList.add("fade-in");
+            }
+
+            // Mark the clicked tab as active
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add("active");
+            }
         }
 
-        // Show Profile tab by default
-        document.getElementById("Home").style.display = "block";
+        // Show Profile tab by default on load
+        document.addEventListener("DOMContentLoaded", function () {
+            openTab(null, "Home");
+        });
     </script>
 </body>
 </html>
