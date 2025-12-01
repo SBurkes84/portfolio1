@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Shequila Sledge - Portfolio</title>
+    <meta name="description" content="Portfolio of Shequila Sledge - Computer Science">
+    <meta name="keywords" content="Computer Science, IT, Data Analysis, Web Development">
+    <meta name="author" content="Shequila Sledge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            color: #f8f8f8;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.65); /* dark semi-transparent background */
+            border-radius: 8px;
+            color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .topnav a, .dropdown .dropbtn {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .topnav a:hover, .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+            .topnav a, .dropdown .dropbtn {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a onclick="openTab(event, 'Home')" class="tablinks active">Profile</a>
+        <a onclick="openTab(event, 'Resume')" class="tablinks">Resume</a>
+        <a onclick="openTab(event, 'Skills')" class="tablinks">Skills</a>
+        <a onclick="openTab(event, 'Education')" class="tablinks">Education</a>
+        <a onclick="openTab(event, 'Accomplishments')" class="tablinks">Accomplishments</a>
+        <a onclick="openTab(event, 'Contact')" class="tablinks">Contact</a>
+        <div class="dropdown">
+            <button class="dropbtn">Work Examples <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a onclick="openTab(event, 'Writing')" class="tablinks">Writing</a>
+                <a onclick="openTab(event, 'WebProject')" class="tablinks">Web Projects</a>
+                <a onclick="openTab(event, 'Database')" class="tablinks">Databases</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Home" class="container fade-in">
+        <h1>Profile</h1>
+        <p>This is a preview of your updated portfolio page with lighter text and dark semi-transparent containers for better readability. The dark mode toggle has been removed.</p>
+    </div>
+
+    <div id="Resume" class="container fade-in" style="display:none;">
+        <h1>Resume</h1>
+        <p>Download my resume in your preferred format:</p>
+        <p>
+            <a href="Shequila_Sledge_Resume.pdf" target="_blank">📄 PDF Version</a> |
+            <a href="Shequila_Sledge_Resume.docx" target="_blank">📝 Word Version</a>
+        </p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            document.querySelectorAll(".container").forEach(tab => tab.style.display = "none");
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        // Show Profile tab by default
+        document.getElementById("Home").style.display = "block";
+    </script>
+</body>
+</html>
