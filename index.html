@@ -54,8 +54,7 @@
       padding: 4px;
     }
 
-    .topnav a,
-    .dropbtn {
+    .topnav a {
       display: inline-block;
       color: #ffffff;
       padding: 12px 18px;
@@ -68,7 +67,6 @@
     }
 
     .topnav a:hover,
-    .dropdown:hover .dropbtn,
     .topnav a.active {
       background-color: #f05f98;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
@@ -80,14 +78,33 @@
       position: relative;
     }
 
+    .dropbtn {
+      display: inline-block;
+      color: #ffffff;
+      padding: 12px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 999px;
+      margin: 2px 4px;
+      transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+      background: none;
+      border: none;
+    }
+
+    .dropbtn:hover {
+      background-color: #f05f98;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      transform: translateY(-1px);
+    }
+
     .dropdown-content {
       display: none;
       position: absolute;
       background-color: #151a30;
-      z-index: 1;
       min-width: 180px;
       border-radius: 16px;
       overflow: hidden;
+      z-index: 999;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       text-align: left;
     }
@@ -99,14 +116,11 @@
       margin: 0;
       border-radius: 0;
       font-size: 14px;
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
       background-color: #f05f98;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
     }
 
     /* TAB CONTENT */
@@ -206,9 +220,11 @@
       <a class="tablinks" onclick="openTab('Education', this)">Education</a>
       <a class="tablinks" onclick="openTab('Accomplishments', this)">Accomplishments</a>
       <a class="tablinks" onclick="openTab('Contact', this)">Contact</a>
+
+      <!-- UPDATED DROPDOWN -->
       <div class="dropdown">
-        <span class="dropbtn">Work Examples ▾</span>
-        <div class="dropdown-content">
+        <button class="dropbtn" onclick="toggleDropdown()">Work Examples ▾</button>
+        <div id="dropdownMenu" class="dropdown-content">
           <a class="tablinks" onclick="openTab('Writing', this)">Writing</a>
           <a class="tablinks" onclick="openTab('WebProjects', this)">Web Projects</a>
           <a class="tablinks" onclick="openTab('Database', this)">Database</a>
@@ -451,7 +467,30 @@
       if (element) {
         element.classList.add("active");
       }
+
+      // Close dropdown menu after choosing an item
+      const menu = document.getElementById("dropdownMenu");
+      if (menu) {
+        menu.style.display = "none";
+      }
     }
+
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdownMenu");
+      if (!menu) return;
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // Close dropdown when clicking outside of it
+    document.addEventListener("click", function(event) {
+      const menu = document.getElementById("dropdownMenu");
+      const button = document.querySelector(".dropbtn");
+      if (!menu || !button) return;
+
+      if (!button.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
 
     document.addEventListener("DOMContentLoaded", function () {
       const firstTab = document.querySelector(".topnav .tablinks");
@@ -464,3 +503,4 @@
   </script>
 </body>
 </html>
+
